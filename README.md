@@ -14,28 +14,33 @@ You can make use of POSTMAN to hit the endpoints.
 1. After you build & run the application,  you can hit the POST endpoint for the **SCRAPER** service
    - POST Endpoint :
      http://localhost:8080/scrapeProduct OR http://127.0.0.1:8080/scrapeProduct 
-   - Sample JSON Request :\
-     {\
-         "url": "https://www.amazon.com/PlayStation-4-Pro-1TB-Console/dp/B01LOP8EZC" \
-     }\
-     *Note : After you hit this service, it will also internally call PERSISTER service to store in MongoDB.*
+   - Sample JSON Request :
+```
+{
+   "url": "https://www.amazon.com/PlayStation-4-Pro-1TB-Console/dp/B01LOP8EZC" 
+}
+```
+
+   *Note : After you hit this service, it will also internally call PERSISTER service to store in MongoDB.*
 
 2. **PERSISTER** service is already tested somewhat in the first point. If you still want to test this service thoroughly, the details are as follows
    - POST Endpoint :
      http://localhost:8081/persistProduct OR http://127.0.0.1:8081/persistProduct
-   - Sample JSON Request : \
-     { \
-         "url": "https://www.amazon.com/Xbox-Dazzling-Bundle-Controllers-Kwalicable/dp/B095J5FM5D/ref=sr_1_2?dchild=1&keywords=xbox&qid=1631306749&sr=8-2", \
-         "timestamp": "2021-12-11 16:29:37.3418367 +0530 IST", \
-         "product": { \
-             "name": "Xbox Series S Dazzling Bundle | Includes: Xbox Series S 512GB Console, 2 Wireless  Controllers for Xbox, 3 Month Game Pass Code, Kwalicable Accessory Pack", \
-             "imageURL": "https://images-na.ssl-images-amazon.com/images/I/61NPXqxIROL.__AC_SY300_SX300_QL70_ML2_.jpg", \
+   - Sample JSON Request : 
+     ```
+     { 
+         "url": "https://www.amazon.com/Xbox-Dazzling-Bundle-Controllers-Kwalicable/dp/B095J5FM5D/ref=sr_1_2?dchild=1&keywords=xbox&qid=1631306749&sr=8-2", 
+         "timestamp": "2021-12-11 16:29:37.3418367 +0530 IST", 
+         "product": { 
+             "name": "Xbox Series S Dazzling Bundle | Includes: Xbox Series S 512GB Console, 2 Wireless  Controllers for Xbox, 3 Month Game Pass Code, Kwalicable Accessory Pack", 
+             "imageURL": "https://images-na.ssl-images-amazon.com/images/I/61NPXqxIROL.__AC_SY300_SX300_QL70_ML2_.jpg", 
              "description": "\nVALUE BUNDLE INCLUDES: Xbox Series S 512GB Console, 2 Wireless Controllers for Xbox Series S, 3 Month Game Pass Code, Kwalicable 6ft High Speed HDMI Cable,
-             Kwalicable Microfiber Cleaning Cloth......", \
-             "price": "$599.00", \
-             "totalRatings": "9 ratings" \
-         } \
+             Kwalicable Microfiber Cleaning Cloth......", 
+             "price": "$599.00", 
+             "totalRatings": "9 ratings" 
+         } 
      }
+     ```
 
 3. I have added an additional endpoint in **PERSISTER** to view all the products stored in the MongoDB database.
    - GET Endpoint :
