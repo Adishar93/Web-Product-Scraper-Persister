@@ -1,4 +1,4 @@
-# Go_Amazon_Scraper
+# Item_Scraper
 
 ## Build & Run Instructions
 
