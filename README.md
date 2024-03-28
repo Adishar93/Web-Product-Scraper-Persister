@@ -1,4 +1,4 @@
-# Item_Scraper
+# Web Product Scraper & Persister
 
 ## Build & Run Instructions
 
